@@ -15,3 +15,25 @@ install.packages("tidyverse")
 library(tidyverse)
 interviews <- read_csv("data/SAFI_clean.csv")
 interviews
+
+
+
+# Question 5
+read_csv2("data/KongeraekkenDAM.csv")
+
+# we use read_csv2 cause the file is semicolon separated, due to it being made in excel
+data <- read_csv2("data/KongeraekkenDAM.csv")
+
+# Calculate the duration of each king's rule
+data <- data %>%
+  mutate(duration = afslut. - indsaet.)
+
+# Calculate the mean and median duration
+mean_duration <- mean(data$duration, na.rm = TRUE)
+median_duration <- median(data$duration, na.rm = TRUE)
+
+# Results
+print(paste("Mean duration of rule:", mean_duration))
+"Mean duration of rule: 19.7272727272727"
+print(paste("Median duration of rule:", median_duration))
+"Median duration of rule: 20"
