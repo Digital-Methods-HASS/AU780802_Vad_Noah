@@ -1,0 +1,17 @@
+# Question 1 
+rooms <- c(1, 5, 2, 3, 1, NA, 3, 1, 3, 2, NA, 1, 8, 3, 1, 4, NA, 1, 3, 1, 2, 1, 7, 1, NA, 4, 3 ,1 ,7 ,2 ,1 ,NA ,1, 1, 3)
+# count many elements are greater than 2, ignoring NA values
+sum(rooms > 2, na.rm = TRUE)
+
+# Question 2 
+class(rooms)
+
+# Question 3
+median(rooms)
+median(rooms, na.rm=TRUE)
+
+# Question 4
+install.packages("tidyverse")
+library(tidyverse)
+interviews <- read_csv("data/SAFI_clean.csv")
+interviews
